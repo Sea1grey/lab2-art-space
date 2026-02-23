@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">ArtSpace</string>
+
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+
+    <string name="art1_title">Сирень на солнце</string>
+    <string name="art1_author">Клод Моне (1872)</string>
+
+    <string name="art2_title">Постоянство памяти</string>
+    <string name="art2_author">Сальвадор Дали (1931)</string>
+
+    <string name="art3_title">Волна</string>
+    <string name="art3_author">Иван Айвазовский (1890)</string>
+
+    <string name="art4_title">Звездная ночь над Роной</string>
+    <string name="art4_author">Винсент Ван Гог (1888)</string>
 </resources>
