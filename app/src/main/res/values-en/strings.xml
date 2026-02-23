@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Art Gallery</string>
+
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+
+    <string name="art1_title">Lilacs in the Sun</string>
+    <string name="art1_author">Claude Monet (1872)</string>
+
+    <string name="art2_title">The Persistence of Memory</string>
+    <string name="art2_author">Salvador Dalí (1931)</string>
+
+    <string name="art3_title">The Wave</string>
+    <string name="art3_author">Ivan Aivazovsky (1890)</string>
+
+    <string name="art4_title">Starry Night over the Rhône</string>
+    <string name="art4_author">Vincent van Gogh (1888)</string>
+</resources>
