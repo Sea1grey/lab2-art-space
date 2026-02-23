@@ -15,7 +15,12 @@ data class Artwork(
     val authorResId: Int
 )
 
+
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        private const val KEY_INDEX = "current_index"
+    }
 
     private lateinit var artworks: List<Artwork>
     private var currentIndex = 0
@@ -24,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Инициализация коллекции
         artworks = listOf(
             Artwork(R.drawable.mone, R.string.art1_title, R.string.art1_author),
             Artwork(R.drawable.salvador_dali, R.string.art2_title, R.string.art2_author),
@@ -32,14 +36,14 @@ class MainActivity : AppCompatActivity() {
             Artwork(R.drawable.van_gogh, R.string.art4_title, R.string.art4_author)
         )
 
-        // Связываем элементы
+        currentIndex = savedInstanceState?.getInt(KEY_INDEX) ?: 0
+
         val imageView = findViewById<ImageView>(R.id.artImage)
         val titleText = findViewById<TextView>(R.id.artTitle)
         val authorText = findViewById<TextView>(R.id.artAuthor)
         val prevButton = findViewById<Button>(R.id.buttonPrevious)
         val nextButton = findViewById<Button>(R.id.buttonNext)
 
-        // Кнопка "Назад"
         prevButton.setOnClickListener {
             if (currentIndex > 0) {
                 currentIndex--
@@ -47,7 +51,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Кнопка "Вперёд"
         nextButton.setOnClickListener {
             if (currentIndex < artworks.size - 1) {
                 currentIndex++
@@ -55,8 +58,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Первичное отображение
         updateArtwork(imageView, titleText, authorText, prevButton, nextButton)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(KEY_INDEX, currentIndex)
     }
 
     private fun updateArtwork(
@@ -66,6 +73,14 @@ class MainActivity : AppCompatActivity() {
         prevButton: Button,
         nextButton: Button
     ) {
+        val title = getString(artwork.titleResId)
+        val author = getString(artwork.authorResId)
+        imageView.contentDescription = getString(
+            R.string.artwork_description,
+            title,
+            author
+        )
+
         val artwork = artworks[currentIndex]
 
         imageView.setImageResource(artwork.imageResId)

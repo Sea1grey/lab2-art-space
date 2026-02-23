@@ -17,4 +17,5 @@
 
     <string name="art4_title">Звездная ночь над Роной</string>
     <string name="art4_author">Винсент Ван Гог (1888)</string>
+    <string name="artwork_description">%1$s, автор %2$s</string>
 </resources>

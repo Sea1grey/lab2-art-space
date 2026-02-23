@@ -16,4 +16,5 @@
 
     <string name="art4_title">Starry Night over the Rhône</string>
     <string name="art4_author">Vincent van Gogh (1888)</string>
+    <string name="artwork_description">%1$s, author %2$s</string>
 </resources>
