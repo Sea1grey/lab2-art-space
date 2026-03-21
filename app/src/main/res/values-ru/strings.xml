@@ -1,8 +1,10 @@
-<resources>
-    <string name="app_name">ArtSpace</string>
+<?xml version="1.0" encoding="utf-8"?>
 
-    <string name="previous">Previous</string>
-    <string name="next">Next</string>
+<resources>
+    <string name="app_name">Художественная галерея</string>
+
+    <string name="previous">Назад</string>
+    <string name="next">Далее</string>
 
     <string name="art1_title">Сирень на солнце</string>
     <string name="art1_author">Клод Моне (1872)</string>

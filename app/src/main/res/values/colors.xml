@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gallery_background">#121212</color>
+    <color name="card_background">#1E1E1E</color>
+    <color name="card_background_light">#343434</color>
+    <color name="accent_frame">#444444</color>
+    <color name="text_primary">#FFFFFF</color>
 </resources>

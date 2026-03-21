@@ -1,39 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gallery_background"
-    tools:context=".MainActivity">
+    android:background="@color/gallery_background">
 
+    <!-- Картинка слева -->
     <ImageView
         android:id="@+id/artImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginHorizontal="32dp"
-        android:scaleType="centerCrop"
         android:background="@drawable/image_frame"
+        android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintDimensionRatio="3:4"
-        app:layout_constraintHeight_percent="0.5"/>
+        app:layout_constraintWidth_percent="0.45"
+        app:layout_constraintDimensionRatio="3:4"/>
 
+
+    <!-- Контейнер текста -->
     <LinearLayout
         android:id="@+id/textBlock"
+        android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginHorizontal="32dp"
+        android:padding="50dp"
         android:background="@drawable/text_frame"
-        android:orientation="vertical"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/artImage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/artImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp">
 
         <TextView
             android:id="@+id/artTitle"
@@ -42,7 +41,7 @@
             android:text="Название картины"
             android:textColor="@color/text_primary"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/artAuthor"
@@ -51,23 +50,20 @@
             android:layout_marginTop="4dp"
             android:text="Автор (год)"
             android:textColor="@color/text_primary"
-            android:textSize="16sp" />
-
+            android:textSize="16sp"/>
     </LinearLayout>
 
+    <!-- Кнопки навигации снизу -->
     <LinearLayout
         android:id="@+id/navigationBlock"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/textBlock"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="32dp">
-
+        app:layout_constraintStart_toEndOf="@id/artImage"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <Button
             android:id="@+id/buttonPrevious"
@@ -81,8 +77,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/next"/>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
